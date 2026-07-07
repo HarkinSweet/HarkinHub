@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Analytics | HarkinHub</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<button id="themeToggle" class="theme-toggle">
+    🌙
+</button>
+
+<div class="dashboard">
+
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <h2>HarkinHub</h2>
+            <p>Student Portal</p>
+
+        </div>
+
+        <div class="profile">
+
+            <h3 id="studentName">Student</h3>
+            <p>Welcome Back 👋</p>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="homework.html">
+                        <i class="fa-solid fa-book"></i>
+                        Homework
+                    </a>
+                </li>
+
+                <li>
+                    <a href="timetable.html">
+                        <i class="fa-solid fa-calendar"></i>
+                        Timetable
+                    </a>
+                </li>
+
+                <li>
+                    <a href="announcements.html">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        Announcements
+                    </a>
+                </li>
+
+                <li>
+                    <a href="library.html">
+                        <i class="fa-solid fa-book-open"></i>
+                        Library
+                    </a>
+                </li>
+
+                <li>
+                    <a href="housepoints.html">
+                        <i class="fa-solid fa-trophy"></i>
+                        House Points
+                    </a>
+                </li>
+
+                <li>
+                    <a href="lostfound.html">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Lost & Found
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ai.html">
+                        <i class="fa-solid fa-robot"></i>
+                        AI Assistant
+                    </a>
+                </li>
+
+                <li class="active">
+
+    <a href="budget.html">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        Budget Planner
+
+    </a>
+
+</li>
+
+<li>
+
+<a href="analytics.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Analytics
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Teacher Portal
+
+</a>
+
+</li>
+
+<li>
+
+    <a href="about.html">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        About
+
+    </a>
+
+</li>
+
+                <li>
+
+                    <button onclick="logout()">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ========================= -->
+    <!-- MAIN -->
+    <!-- ========================= -->
+
+  <main class="main">
+
+<h1>📊 Student Analytics</h1>
+
+<br>
+
+<section class="cards">
+
+    <div class="card">
+
+        <h3>
+            <i class="fa-solid fa-chart-line"></i>
+            Homework Completion
+        </h3>
+
+        <p id="completionPercent">0%</p>
+
+        <span>Completion Rate</span>
+
+    </div>
+
+    <div class="card">
+
+        <h3>
+            <i class="fa-solid fa-fire"></i>
+            Study Streak
+        </h3>
+
+        <p id="analyticsStreak">1</p>
+
+        <span>Days</span>
+
+    </div>
+
+    <div class="card">
+
+        <h3>
+            <i class="fa-solid fa-star"></i>
+            XP
+        </h3>
+
+        <p id="analyticsXP">0</p>
+
+        <span>Experience</span>
+
+    </div>
+
+    <div class="card">
+
+        <h3>
+            <i class="fa-solid fa-trophy"></i>
+            Level
+        </h3>
+
+        <p id="analyticsLevel">1</p>
+
+        <span>Current Level</span>
+
+    </div>
+
+</section>
+
+<section class="progress-card">
+
+<h3>Homework Completion</h3>
+
+<div class="progress">
+
+<div id="analyticsProgress"></div>
+
+</div>
+
+<p id="analyticsProgressText">
+
+0% Complete
+
+</p>
+
+</section>
+
+<section class="progress-card">
+
+<h3>Weekly Homework Activity</h3>
+
+<canvas id="analyticsChart"></canvas>
+
+</section>
+
+<section class="progress-card">
+
+<h3>Student Performance</h3>
+
+<canvas id="performanceChart"></canvas>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-wallet"></i>
+Budget Remaining
+</h3>
+
+<p id="analyticsBudget">₦0</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+<i class="fa-solid fa-award"></i>
+House Points
+</h3>
+
+<p id="analyticsPoints">0</p>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+    HarkinHub Version 1.0 • © 2026 Ryan Akindun
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/analytics.js"></script>
+
+</html>

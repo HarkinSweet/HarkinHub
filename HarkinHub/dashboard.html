@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#4F46E5">
+
+<title>Dashboard | HarkinHub</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div id="loader">
+
+<div class="spinner"></div>
+
+</div>
+
+
+
+    <div id="splashScreen">
+
+    <div class="splash-content">
+
+        <img
+        src="icons/icon-192.png"
+        class="splash-logo">
+
+        <h1>HarkinHub</h1>
+
+        <p>Student Management Portal</p>
+
+        <div class="loading-bar">
+
+            <div id="loadingFill"></div>
+
+        </div>
+
+        <span id="loadingText">
+            Loading...
+        </span>
+
+    </div>
+
+</div>
+
+<button id="themeToggle" class="theme-toggle">
+    🌙
+</button>
+
+<div class="dashboard">
+
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <h2>HarkinHub</h2>
+            <p>Student Portal</p>
+
+        </div>
+
+        <div class="profile">
+
+            <h3 id="studentName">Student</h3>
+            <p>Welcome Back 👋</p>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="homework.html">
+                        <i class="fa-solid fa-book"></i>
+                        Homework
+                    </a>
+                </li>
+
+                <li>
+
+<a href="study.html">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Study Planner
+
+</a>
+
+</li>
+
+                <li>
+                    <a href="timetable.html">
+                        <i class="fa-solid fa-calendar"></i>
+                        Timetable
+                    </a>
+                </li>
+
+                <li>
+                    <a href="announcements.html">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        Announcements
+                    </a>
+                </li>
+
+                <li>
+                    <a href="library.html">
+                        <i class="fa-solid fa-book-open"></i>
+                        Library
+                    </a>
+                </li>
+
+                <li>
+                    <a href="housepoints.html">
+                        <i class="fa-solid fa-trophy"></i>
+                        House Points
+                    </a>
+                </li>
+
+                <li>
+                    <a href="lostfound.html">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Lost & Found
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ai.html">
+                        <i class="fa-solid fa-robot"></i>
+                        AI Assistant
+                    </a>
+                </li>
+
+                <li>
+    <a href="quiz.html">
+        <i class="fa-solid fa-circle-question"></i>
+        Quiz Center
+    </a>
+</li>
+
+<li>
+
+<a href="pomodoro.html">
+
+<i class="fa-solid fa-stopwatch"></i>
+
+Pomodoro
+
+</a>
+
+</li>
+
+<li>
+
+<a href="budget.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Budget Planner
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="analytics.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Analytics
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Teacher Portal
+
+</a>
+
+</li>
+
+<li>
+
+    <a href="about.html">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        About
+
+    </a>
+
+</li>
+
+                <li>
+
+                    <button onclick="logout()">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ========================= -->
+    <!-- MAIN -->
+    <!-- ========================= -->
+
+    <main class="main">
+
+        <!-- ========================= -->
+        <!-- TOP HEADER -->
+        <!-- ========================= -->
+
+        <header class="header">
+
+            <div>
+
+                <h1 id="greeting">
+                    Good Morning
+                </h1>
+
+                <p id="date"></p>
+
+            </div>
+
+            <div class="header-right">
+
+                <div class="search">
+
+                    <input
+id="globalSearch"
+type="text"
+placeholder="Search homework, timetable, announcements...">
+
+                </div>
+
+                <h2 id="clock"></h2>
+
+                <div class="notification">
+
+    <button id="notificationBtn">
+
+        🔔
+
+        <span id="notificationCount">0</span>
+
+    </button>
+
+    <div id="notificationPanel" class="notification-panel">
+
+        <h3>Notifications</h3>
+
+        <ul id="notificationList">
+
+            <li>No notifications yet.</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+                
+            </div>
+
+            <div id="searchResults" class="search-results"></div>
+
+        </header>
+
+        <!-- ========================= -->
+        <!-- HERO -->
+        <!-- ========================= -->
+
+        <section class="hero glass">
+
+            <h2>
+                Welcome Back,
+                <span id="studentNameHero">Student</span>
+                👋
+            </h2>
+
+            <p>
+
+                Stay productive today.
+                Check your homework,
+                timetable,
+                and announcements below.
+
+            </p>
+
+        </section>
+
+        <section class="progress-card">
+
+    <h3>💡 Daily Motivation</h3>
+
+    <h2 id="quote">
+        Believe in yourself.
+    </h2>
+
+    <button id="newQuote">
+
+        New Quote
+
+    </button>
+
+</section>
+
+        <!-- ========================= -->
+        <!-- STATS -->
+        <!-- ========================= -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <h3>
+                    <i class="fa-solid fa-book"></i>
+                    Homework
+                </h3>
+
+                <p id="homeworkCount">
+                    0
+                </p>
+
+                <span>Assignments</span>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    <i class="fa-solid fa-calendar"></i>
+                    Today's Classes
+                </h3>
+
+                <p id="classCount">
+                    0
+                </p>
+
+                <span>Classes</span>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    <i class="fa-solid fa-bullhorn"></i>
+                    Announcements
+                </h3>
+
+                <p id="announcementCount">
+                    0
+                </p>
+
+                <span>Notices</span>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    <i class="fa-solid fa-trophy"></i>
+                    House Points
+                </h3>
+
+                <p id="pointsCount">
+                    0
+                </p>
+
+                <span>Points</span>
+
+            </div>
+
+            <div class="card">
+
+    <h3>
+        <i class="fa-solid fa-fire"></i>
+        Study Streak
+    </h3>
+
+    <p id="streakCount">1</p>
+
+    <span>Days 🔥</span>
+
+</div>
+
+<div class="card">
+
+    <h3>
+        <i class="fa-solid fa-star"></i>
+        Experience
+    </h3>
+
+    <div class="xp-container">
+
+<p id="xpCount">0</p>
+
+<span id="xpGain"></span>
+
+</div>
+
+    <span>XP</span>
+
+</div>
+
+<div class="card">
+
+    <h3>
+        <i class="fa-solid fa-medal"></i>
+        Level
+    </h3>
+
+    <p id="levelCount">1</p>
+
+    <span>Student Level</span>
+
+</div>
+
+<div class="card" id="pomodoroCard">
+
+<h3>
+
+<i class="fa-solid fa-stopwatch"></i>
+
+Pomodoro
+
+</h3>
+
+<p id="pomodoroCount">
+
+0
+
+</p>
+
+<span>
+
+Focus Sessions
+
+</span>
+
+</div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- PROGRESS -->
+        <!-- ========================= -->
+
+        <section class="progress-card">
+
+            <h3>
+
+                Homework Progress
+
+            </h3>
+
+            <div class="progress">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+            <p id="progressText">
+
+                0% Complete
+
+            </p>
+
+        </section>
+
+        <section class="progress-card">
+
+    <h3>📈 Weekly Homework Activity</h3>
+
+    <canvas id="homeworkChart"></canvas>
+
+</section>
+
+<section class="progress-card">
+
+    <h3>🏆 Achievements</h3>
+
+    <div id="achievementContainer" class="achievement-grid">
+
+    </div>
+
+</section>
+
+        <!-- ========================= -->
+        <!-- DASHBOARD GRID -->
+        <!-- ========================= -->
+
+        <div class="dashboard-grid">
+
+            <section class="today-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    Today's Classes
+
+                </h3>
+
+                <ul id="todayClasses">
+
+                    <li>No classes today.</li>
+
+                </ul>
+
+            </section>
+
+            <section class="homework-card">
+
+                <h3>
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    Upcoming Homework
+
+                </h3>
+
+                <ul id="upcomingHomework">
+
+                    <li>No homework due.</li>
+
+                </ul>
+
+            </section>
+
+            <section class="today-card">
+
+    <h3>✅ My To-Do List</h3>
+
+    <div class="todo-input">
+
+        <input
+            id="todoInput"
+            type="text"
+            placeholder="Add a task...">
+
+        <button id="addTodo">
+            Add
+        </button>
+
+    </div>
+
+    <ul id="todoList">
+
+    </ul>
+
+</section>
+
+            <section class="announcement">
+
+                <div class="icon">
+
+                    <i class="fa-solid fa-bullhorn"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Announcements
+
+                    </h3>
+
+                    <p>
+
+                        No new announcements.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+            <section class="ai-card">
+
+                <h2>
+
+                    🤖 Harkin AI
+
+                </h2>
+
+                <p>
+
+                    Ask questions, get homework help,
+                    summarize notes and more.
+
+                </p>
+<button
+onclick="location.href='ai.html'">
+
+Open AI Assistant
+
+</button>
+
+            </section>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- QUICK ACTIONS -->
+        <!-- ========================= -->
+<section class="card" id="studyCard">
+
+<h3>
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Study Planner
+
+</h3>
+
+<p id="studyCount">
+
+0
+
+</p>
+
+<span>Sessions Planned</span>
+
+</section>
+
+        <section class="quick-actions">
+
+    <div class="action" onclick="location.href='homework.html'">
+        <i class="fa-solid fa-book"></i>
+        Homework
+    </div>
+
+    <div class="action" onclick="location.href='timetable.html'">
+        <i class="fa-solid fa-calendar"></i>
+        Timetable
+    </div>
+
+    <div class="action" onclick="location.href='ai.html'">
+        <i class="fa-solid fa-robot"></i>
+        AI
+    </div>
+
+    <div class="action" onclick="location.href='library.html'">
+        <i class="fa-solid fa-book-open"></i>
+        Library
+    </div>
+
+    <div class="action" onclick="location.href='announcements.html'">
+        <i class="fa-solid fa-bullhorn"></i>
+        Notices
+    </div>
+
+    <div class="action" onclick="location.href='housepoints.html'">
+        <i class="fa-solid fa-trophy"></i>
+        Points
+    </div>
+
+    <div class="action" onclick="location.href='quiz.html'">
+        <i class="fa-solid fa-circle-question"></i>
+        Quiz Center
+    </div>
+
+    
+
+    <div class="action" onclick="location.href='budget.html'">
+        <i class="fa-solid fa-wallet"></i>
+        Budget Planner
+    </div>
+
+    <section class="ai-card">
+
+<h2>
+
+📝 CBT Quiz
+
+</h2>
+
+<p>
+
+Practice school examinations and earn XP.
+
+</p>
+
+<button id="quizButton">
+
+Start Quiz
+
+</button>
+
+</section>
+
+</section>
+
+       
+        <!-- ========================= -->
+        <!-- FOOTER -->
+        <!-- ========================= -->
+
+        <footer class="footer">
+
+            <p>
+
+                © 2026 HarkinHub • Version 1.0
+
+            </p>
+
+        </footer>
+
+    </main>
+
+    <!-- Achievement Popup -->
+
+<div id="achievementPopup" class="achievement-popup">
+
+    <div class="achievement-box">
+
+        <div id="popupIcon" class="popup-icon">🏆</div>
+
+        <h2>Achievement Unlocked!</h2>
+
+        <h3 id="popupTitle"></h3>
+
+        <p id="popupDescription"></p>
+
+        <button id="closeAchievement">
+
+            Awesome!
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Teacher Dashboard | HarkinHub</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<button id="themeToggle" class="theme-toggle">
+    🌙
+</button>
+
+<div class="dashboard">
+
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <h2>HarkinHub</h2>
+            <p>Student Portal</p>
+
+        </div>
+
+        <div class="profile">
+
+            <h3 id="studentName">Student</h3>
+            <p>Welcome Back 👋</p>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="homework.html">
+                        <i class="fa-solid fa-book"></i>
+                        Homework
+                    </a>
+                </li>
+
+                <li>
+                    <a href="timetable.html">
+                        <i class="fa-solid fa-calendar"></i>
+                        Timetable
+                    </a>
+                </li>
+
+                <li>
+                    <a href="announcements.html">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        Announcements
+                    </a>
+                </li>
+
+                <li>
+                    <a href="library.html">
+                        <i class="fa-solid fa-book-open"></i>
+                        Library
+                    </a>
+                </li>
+
+                <li>
+                    <a href="housepoints.html">
+                        <i class="fa-solid fa-trophy"></i>
+                        House Points
+                    </a>
+                </li>
+
+                <li>
+                    <a href="lostfound.html">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Lost & Found
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ai.html">
+                        <i class="fa-solid fa-robot"></i>
+                        AI Assistant
+                    </a>
+                </li>
+
+                <li class="active">
+
+    <a href="budget.html">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        Budget Planner
+
+    </a>
+
+</li>
+
+                <li>
+
+                    <button onclick="logout()">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ========================= -->
+    <!-- MAIN -->
+    <!-- ========================= -->
+
+ <main class="main">
+
+<h1>👨‍🏫 Teacher Dashboard</h1>
+
+<br>
+
+<section class="progress-card">
+
+<h3>Add Homework</h3>
+
+<input id="hwTitle" placeholder="Homework Title">
+
+<input id="hwDue" placeholder="Due Date">
+
+<button id="saveHomework">
+
+Add Homework
+
+</button>
+
+</section>
+
+<section class="progress-card">
+
+<h3>Add Announcement</h3>
+
+<input id="announcementTitle"
+
+placeholder="Announcement">
+
+<button id="saveAnnouncement">
+
+Post Announcement
+
+</button>
+
+</section>
+
+<section class="progress-card">
+
+<h3>Add House Points</h3>
+
+<input
+id="pointsInput"
+type="number"
+placeholder="Points">
+
+<button id="savePoints">
+
+Award Points
+
+</button>
+
+</section>
+
+<section class="progress-card">
+
+<h3>Quick Preview</h3>
+
+<a href="dashboard.html">
+
+<button>
+
+Open Student Dashboard
+
+</button>
+
+</a>
+
+</section>
+
+<section class="progress-card">
+
+<h3>Session</h3>
+
+<button id="teacherLogout">
+
+Logout Teacher
+
+</button>
+
+</section>
+
+</main>
+
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+
+</html>

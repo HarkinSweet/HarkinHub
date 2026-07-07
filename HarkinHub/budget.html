@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Budget Planner | HarkinHub</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<button id="themeToggle" class="theme-toggle">
+    🌙
+</button>
+
+<div class="dashboard">
+
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <h2>HarkinHub</h2>
+            <p>Student Portal</p>
+
+        </div>
+
+        <div class="profile">
+
+            <h3 id="studentName">Student</h3>
+            <p>Welcome Back 👋</p>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="homework.html">
+                        <i class="fa-solid fa-book"></i>
+                        Homework
+                    </a>
+                </li>
+
+                <li>
+                    <a href="timetable.html">
+                        <i class="fa-solid fa-calendar"></i>
+                        Timetable
+                    </a>
+                </li>
+
+                <li>
+                    <a href="announcements.html">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        Announcements
+                    </a>
+                </li>
+
+                <li>
+                    <a href="library.html">
+                        <i class="fa-solid fa-book-open"></i>
+                        Library
+                    </a>
+                </li>
+
+                <li>
+                    <a href="housepoints.html">
+                        <i class="fa-solid fa-trophy"></i>
+                        House Points
+                    </a>
+                </li>
+
+                <li>
+                    <a href="lostfound.html">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Lost & Found
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ai.html">
+                        <i class="fa-solid fa-robot"></i>
+                        AI Assistant
+                    </a>
+                </li>
+
+                <li class="active">
+
+    <a href="budget.html">
+
+        <i class="fa-solid fa-wallet"></i>
+
+        Budget Planner
+
+    </a>
+
+</li>
+
+<li>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Teacher Portal
+
+</a>
+
+</li>
+
+<li>
+
+    <a href="about.html">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        About
+
+    </a>
+
+</li>
+
+                <li>
+
+                    <button onclick="logout()">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ========================= -->
+    <!-- MAIN -->
+    <!-- ========================= -->
+
+    <main class="main">
+
+<h1>💰 Budget Planner</h1>
+
+<br>
+
+<div class="progress-card">
+
+<h3>Weekly Allowance</h3>
+
+<input
+id="income"
+type="number"
+placeholder="Enter allowance">
+
+<button id="saveIncome">
+
+Save
+
+</button>
+
+</div>
+
+<div class="progress-card">
+
+<h3>Add Expense</h3>
+
+<input
+id="expenseName"
+placeholder="Expense">
+
+<input
+id="expenseAmount"
+type="number"
+placeholder="Amount">
+
+<button id="addExpense">
+
+Add Expense
+
+</button>
+
+</div>
+
+<div class="progress-card">
+
+<h3>Balance</h3>
+
+<h1 id="balance">₦0</h1>
+
+</div>
+
+<div class="progress-card">
+
+<h3>Expenses</h3>
+
+<ul id="expenseList">
+
+</ul>
+
+</div>
+
+<footer class="footer">
+
+    HarkinHub Version 1.0 • © 2026 Ryan Akindun
+
+</footer>
+
+</main>
+
+</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/budget.js"></script>
+
+</html>

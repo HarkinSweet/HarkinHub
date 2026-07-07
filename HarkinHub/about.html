@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#4F46E5">
+
+<title>About | HarkinHub</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="images/favicon.png">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div id="splashScreen">
+
+    <div class="splash-content">
+
+        <img
+        src="images/favicon.png"
+        class="splash-logo">
+
+        <h1>HarkinHub</h1>
+
+        <p>Student Management Portal</p>
+
+        <div class="loading-bar">
+
+            <div id="loadingFill"></div>
+
+        </div>
+
+        <span id="loadingText">
+            Loading...
+        </span>
+
+    </div>
+
+</div>
+
+    <div id="loader">
+
+<div class="spinner"></div>
+
+</div>
+
+<button id="themeToggle" class="theme-toggle">
+    🌙
+</button>
+
+<div class="dashboard">
+
+    <!-- ========================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <h2>HarkinHub</h2>
+            <p>Student Portal</p>
+
+        </div>
+
+        <div class="profile">
+
+            <h3 id="studentName">Student</h3>
+            <p>Welcome Back 👋</p>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="homework.html">
+                        <i class="fa-solid fa-book"></i>
+                        Homework
+                    </a>
+                </li>
+
+                <li>
+
+<a href="study.html">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+Study Planner
+
+</a>
+
+</li>
+
+                <li>
+                    <a href="timetable.html">
+                        <i class="fa-solid fa-calendar"></i>
+                        Timetable
+                    </a>
+                </li>
+
+                <li>
+                    <a href="announcements.html">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        Announcements
+                    </a>
+                </li>
+
+                <li>
+                    <a href="library.html">
+                        <i class="fa-solid fa-book-open"></i>
+                        Library
+                    </a>
+                </li>
+
+                <li>
+                    <a href="housepoints.html">
+                        <i class="fa-solid fa-trophy"></i>
+                        House Points
+                    </a>
+                </li>
+
+                <li>
+                    <a href="lostfound.html">
+                        <i class="fa-solid fa-briefcase"></i>
+                        Lost & Found
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ai.html">
+                        <i class="fa-solid fa-robot"></i>
+                        AI Assistant
+                    </a>
+                </li>
+
+                <li>
+    <a href="quiz.html">
+        <i class="fa-solid fa-circle-question"></i>
+        Quiz Center
+    </a>
+</li>
+
+<li>
+
+<a href="pomodoro.html">
+
+<i class="fa-solid fa-stopwatch"></i>
+
+Pomodoro
+
+</a>
+
+</li>
+
+<li>
+
+<a href="budget.html">
+
+<i class="fa-solid fa-wallet"></i>
+
+Budget Planner
+
+</a>
+
+</li>
+
+<li>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+</li>
+
+<li>
+
+<a href="analytics.html">
+
+<i class="fa-solid fa-chart-column"></i>
+
+Analytics
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-tie"></i>
+
+Teacher Portal
+
+</a>
+
+</li>
+
+                <li>
+
+                    <button onclick="logout()">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Logout
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </aside>
+
+    <!-- ========================= -->
+    <!-- MAIN -->
+    <!-- ========================= -->
+
+<!-- MAIN -->
+
+<main class="main">
+
+
+<section class="hero glass">
+
+<h1>
+🚀 Welcome to HarkinHub
+</h1>
+
+<p>
+A modern student management system designed to organize learning,
+increase productivity, and make school life smarter.
+</p>
+
+</section>
+
+
+
+<section class="progress-card">
+
+<h2>
+📌 About HarkinHub
+</h2>
+
+<p>
+
+HarkinHub combines homework management, scheduling,
+AI assistance, academic tracking and productivity tools
+into one powerful student platform.
+
+</p>
+
+</section>
+
+
+
+
+<section class="cards">
+
+
+<div class="card">
+
+<h3>
+📚
+</h3>
+
+<h3>
+Learning
+</h3>
+
+<p>
+Manage homework, quizzes,
+library resources and study plans.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+📊
+</h3>
+
+<h3>
+Progress
+</h3>
+
+<p>
+Track XP, achievements,
+streaks and academic growth.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🤖
+</h3>
+
+<h3>
+Smart Tools
+</h3>
+
+<p>
+Use AI assistance,
+budget tools and productivity systems.
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<section class="progress-card">
+
+<h2>
+✨ Features
+</h2>
+
+
+<div class="features-grid">
+
+
+<div>📊 Smart Dashboard</div>
+
+<div>📚 Homework Manager</div>
+
+<div>📅 Timetable System</div>
+
+<div>📢 Announcements</div>
+
+<div>📖 Digital Library</div>
+
+<div>🏆 House Points</div>
+
+<div>🎒 Lost & Found</div>
+
+<div>💰 Budget Planner</div>
+
+<div>🤖 AI Assistant</div>
+
+<div>📝 CBT Quiz System</div>
+
+<div>⭐ XP & Achievements</div>
+
+<div>📈 Analytics</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+<section class="progress-card">
+
+
+<h2>
+🛠 Technologies
+</h2>
+
+
+<div class="features-grid">
+
+
+<div>
+HTML5
+</div>
+
+
+<div>
+CSS3
+</div>
+
+
+<div>
+JavaScript ES6
+</div>
+
+
+<div>
+LocalStorage
+</div>
+
+
+<div>
+Chart.js
+</div>
+
+
+<div>
+Progressive Web App
+</div>
+
+
+<div>
+Font Awesome
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="progress-card">
+
+
+<h2>
+📈 HarkinHub Stats
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h1>
+15+
+</h1>
+
+<p>
+Student Tools
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+10+
+</h2>
+
+<p>
+Productivity Features
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>
+1.0
+</h2>
+
+<p>
+Current Version
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="progress-card">
+
+
+<h2>
+👨‍💻 Developer
+</h2>
+
+
+<h3>
+Ryan Akindun
+</h3>
+
+
+<p>
+Creator and developer of HarkinHub.
+</p>
+
+
+<p>
+Version 1.0
+</p>
+
+
+<p>
+© 2026 HarkinHub
+</p>
+
+
+</section>
+
+
+
+
+
+</main>
+
+    <!-- Achievement Popup -->
+
+<div id="achievementPopup" class="achievement-popup">
+
+    <div class="achievement-box">
+
+        <div id="popupIcon" class="popup-icon">🏆</div>
+
+        <h2>Achievement Unlocked!</h2>
+
+        <h3 id="popupTitle"></h3>
+
+        <p id="popupDescription"></p>
+
+        <button id="closeAchievement">
+
+            Awesome!
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+
+</html>
